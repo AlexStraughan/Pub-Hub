@@ -1,0 +1,2 @@
+class PubCrawl < ApplicationRecord
+end
