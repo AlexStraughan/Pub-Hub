@@ -3,11 +3,10 @@ class PubsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @pubs = Pubs.all
+    @pubs = Pub.all
   end
 
   def show
-    @pub = Pub.find(params[:id])
   end
 
   private
