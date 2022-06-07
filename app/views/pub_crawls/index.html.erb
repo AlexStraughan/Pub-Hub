@@ -1,0 +1,12 @@
+<h1>Pub Crawls</h1>
+<div class="container">
+  <div class= "pub-crawl-row d-flex justify-content-between">
+    <div class= "pub-crawl-card" style="width: 30rem;">
+      <% @pub_crawls.each do |pub_crawl| %>
+        <ul>
+          <li class="list-group-item"><strong>Name:</strong><%= pub_crawl.name %></li>
+          <li class="list-group-item"><strong>Time:</strong><%= pub_crawl.time %></li>
+        </ul>
+    </div>
+  </div>
+</div>
