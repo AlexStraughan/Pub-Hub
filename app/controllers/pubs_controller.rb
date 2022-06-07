@@ -8,6 +8,7 @@ class PubsController < ApplicationController
 
   def show
   end
+end
 
   private
 

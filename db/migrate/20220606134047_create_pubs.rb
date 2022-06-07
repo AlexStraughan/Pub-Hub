@@ -4,6 +4,12 @@ class CreatePubs < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :address
       t.string :description
+      t.string :brand
+      t.boolean :wheelchair
+      t.string :smoking
+      t.float :latitude
+      t.float :longitude
+
 
       t.timestamps
     end
