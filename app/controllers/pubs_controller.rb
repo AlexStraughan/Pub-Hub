@@ -9,6 +9,7 @@ class PubsController < ApplicationController
   def show
     @pub = Pub.find(params[:id])
   end
+end
 
   private
 
