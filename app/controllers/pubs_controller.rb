@@ -7,8 +7,8 @@ class PubsController < ApplicationController
   end
 
   def show
+    @pub = Pub.find(params[:id])
   end
-end
 
   private
 
@@ -17,6 +17,6 @@ end
   end
 
   def pub_params
-    params.require(:pub).permit(:name, :address, :description)
+    params.require(:pub).permit(:name, :address, :description, :latitude, :longitude)
   end
 end
