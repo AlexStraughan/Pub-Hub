@@ -1,7 +1,18 @@
-<h2>god god </h2>
-  <% @pubs.each do |pub| %>
-    <div class="card-category">
-      <%= link_to pub.name, pub_path(pub), class: "btn btn-ghost" %>
+<h1>all Pubs</h1>
+<div class="container">
+  <div class="pub-row d-flex justify-content-between">
+    <div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div class="pub-card" style="width: 30rem;">
+      <% @pubs.each do |pub| %>
+        <ul>
+          <li class="list-group-item"><strong>Name:</strong><%= pub.name %></li>
+          <li class="list-group-item"><strong>Address:</strong><%= pub.address %></li>
+          <li class="list-group-item"><strong>Description:</strong><%= pub.description %></li>
+        </ul>
+      <% end %>
     </div>
   <% end %>
 </div>

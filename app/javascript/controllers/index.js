@@ -9,3 +9,8 @@ application.register("hello", HelloController)
 
 import SearchPubsController from "./search_pubs_controller.js"
 application.register("search-pubs", SearchPubsController)
+import AddressAutocompleteController from "./address_autocomplete_controller.js"
+application.register("address-autocomplete", AddressAutocompleteController)
+
+import MapController from "./map_controller.js"
+application.register("map", MapController)
