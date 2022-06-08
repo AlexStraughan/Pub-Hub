@@ -8,8 +8,8 @@ class PubsController < ApplicationController
       {
         lat: pub.latitude,
         lng: pub.longitude
-        info_window: render_to_string(partial: "info_window", locals: {pub: pub})
-        image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS")
+        # info_window: render_to_string(partial: "info_window", locals: {pub: pub})
+        # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS")
       }
     end
   end
