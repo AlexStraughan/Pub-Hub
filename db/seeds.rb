@@ -33,7 +33,7 @@ pubsArray = JSON.parse(URI.open(london_pubs).read)['elements']
     #   # p pub['lon']
     # end
 
-  pubsArray.first(3000).each do |pub|
+  pubsArray.first(3).each do |pub|
     Pub.create(
     name: pub['tags']['name'],
     address: pub['tags']['addr:postcode'],
