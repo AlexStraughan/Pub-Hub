@@ -15,6 +15,8 @@ class PubsController < ApplicationController
   end
 
   def show
+    @pub = Pub.find(params[:id])
+    @results = GoogleCustomSearchApi.search(@pub.name), {"searchType" => "image"}
   end
 
   private
@@ -24,6 +26,6 @@ class PubsController < ApplicationController
   end
 
   def pub_params
-    params.require(:pub).permit(:name, :address, :description)
+    params.require(:pub).permit(:name, :address, :description, :latitude, :longitude)
   end
 end
