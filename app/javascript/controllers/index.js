@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import AddressAutocompleteController from "./address_autocomplete_controller.js"
+application.register("address-autocomplete", AddressAutocompleteController)
+
 import MapController from "./map_controller.js"
 application.register("map", MapController)
