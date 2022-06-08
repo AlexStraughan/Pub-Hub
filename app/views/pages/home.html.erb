@@ -15,7 +15,11 @@
     <div class="col-sm-8">
       <div id="pubs">
         <% @pubs.each do |pub| %>
-          <h4><%= pub.id %></h4>
+          <h4><%= pub.name %></h4>
+          <h4><%= pub.latitude %></h4>
+          <h4><%= pub.longitude %></h4>
+          <h4><%= pub.brand %></h4>
+          <h4><%= pub.wheelchair %></h4>
         <% end %>
       </div>
     </div>
