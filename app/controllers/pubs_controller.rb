@@ -7,9 +7,9 @@ class PubsController < ApplicationController
     @markers = @pubs.geocoded.map do |pub|
       {
         lat: pub.latitude,
-        lng: pub.longitude
-        # info_window: render_to_string(partial: "info_window", locals: {pub: pub})
-        # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS")
+        lng: pub.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { pub: pub }),
+        image_url: helpers.asset_url("beer.png")
       }
     end
   end

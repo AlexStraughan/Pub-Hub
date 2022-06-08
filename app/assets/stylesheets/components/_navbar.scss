@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #ffe69e;
+  background: #467060;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,3 +10,25 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+
+.App-name{
+display: block;
+font-family: sans-serif;
+font-weight: bold;
+font-size: 5vw;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: bisque;
+
+}
+
+.App-name span:nth-child(2) {
+  background: bisque;
+  color: #467060;
+  border-radius: 1vw;
+  padding: 0 1vw 1vw 1vw;
+  display: inline-block;
+  }
