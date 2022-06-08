@@ -16,7 +16,6 @@ class PubsController < ApplicationController
 
   def show
     @pub = Pub.find(params[:id])
-    @results = GoogleCustomSearchApi.search(@pub.name), {"searchType" => "image"}
   end
 
   private
