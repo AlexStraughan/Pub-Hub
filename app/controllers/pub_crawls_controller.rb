@@ -3,34 +3,36 @@ class PubCrawlsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show create]
 
   def index
-    @pub_crawls = Pub_crawl.all
+    @pub_crawls = PubCrawl.all
   end
 
   def show
-    @pub_crawl = Pub_crawl.find(params[:id])
+    @stop = Stop.new
   end
 
   def new
-    @pub_crawl = Pub_crawl.find(params[:id])
-    @pub_crawl = Pub_crawl.new
+    # @pub_crawl = PubCrawl.find(params[:id])
+    @pub_crawl = PubCrawl.new
   end
 
   def create
-    @stop = Stop.find(params[:id])
-    @pub_crawl = Pub_crawl.new(pub_crawl_params)
-    @pub_crawl.stop = @stop
-    @pub_crawl.user = current_user
+    @pub_crawl = PubCrawl.new(pub_crawl_params)
     if @pub_crawl.save
-      redirect_to pub_crawl_path(@pub_crawl), notice: 'Pub-Crawl was successfully brewed.'
+      redirect_to pub_crawl_path(@pub_crawl)
     else
-      render 'pub_crawls/show', status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @pub_crawl.destroy
+    redirect_to pub_crawls_path, status: :see_other
   end
 
   private
 
   def find_by_id
-    @pub_crawl = Pub_crawl.find(params[:id])
+    @pub_crawl = PubCrawl.find(params[:id])
   end
 
   def pub_crawl_params

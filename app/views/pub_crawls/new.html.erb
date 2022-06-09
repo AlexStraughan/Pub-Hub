@@ -1,0 +1,13 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Create a new pub_crawl</h3>
+        <%= simple_form_for @pub_crawl do |f| %>
+          <%= f.input :name, placeholder: 'The Best Pub Crawl Ever haha yes' %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
