@@ -1,0 +1,17 @@
+.pub-info-window {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+}
+
+.pub-info-window-title {
+  align-items: baseline;
+	display: flex;
+	justify-content: space-between;
+  font-size: 4px;
+  font-weight: lighter;
+  font-family: sans-serif;
+  text-decoration: none;
+}
