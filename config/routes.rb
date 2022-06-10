@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   resources :pubs
   # Defines the root path route ("/")
   # root "articles#index"
-  get '/search' => 'search#index'
-  resources :pub_crawls do
-    resources :stops, only: [:new, :create]
+  resources :pub_crawls, except: [:edit, :update] do
+    resources :stops, only: :create
   end
+  resources :stops, only: :destroy
 
   # resources :stops, only: [:delete]
 end
