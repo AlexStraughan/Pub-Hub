@@ -9,30 +9,48 @@
   object-fit: cover;
 }
 
-.content{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+.map{
+ display: flex;
+ justify-content: center;
+}
+.map-pic img{
+  border: 3px solid bisque;
+
+}
+
+.logo img{
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .upper-section{
   h1{
     color: bisque;
-    font-size: 20px;
+    font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
+    font-weight: bold;
   }
 
   p{
     color: bisque;
-    font-size: 15px;
+    font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
   }
 
+}
+
+.footer {
+  h2{
+    color: bisque;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid bisque;
+    border-radius: 10px ;
+
+
+  }
 }
