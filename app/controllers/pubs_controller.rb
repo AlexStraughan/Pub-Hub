@@ -18,6 +18,10 @@ class PubsController < ApplicationController
     @pub = Pub.find(params[:id])
   end
 
+  def confirmation
+    @pub = Pub.find(params[:id])
+  end
+
   private
 
   def find_by_id
