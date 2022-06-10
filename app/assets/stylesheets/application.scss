@@ -11,3 +11,29 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.background-video{
+  width: 100vw;
+  height: calc(100vh - 50px);
+  object-fit: cover;
+  z-index: -2;
+  }
+
+.background-video-wrapper {
+  height: calc(100vh - 50px);
+  display: flex;
+  }
+
+.background-show{
+  position: absolute;
+  right: 12px;
+  width: 56vw;
+  height: calc(100vh - 50px);
+  object-fit: cover;
+  z-index: -2;
+  }
+
+.background-show-wrapper {
+  height: calc(50vh - 50px);
+  position: relative;
+  }
