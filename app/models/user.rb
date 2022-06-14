@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :user_pub_crawls
   has_many :pub_crawls, through: :user_pub_crawls
+  has_many :reviews
 end

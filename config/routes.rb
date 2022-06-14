@@ -14,5 +14,9 @@ Rails.application.routes.draw do
   end
   resources :stops, only: :destroy
 
+  resources :users
+  resources :reviews
+
+
   # resources :stops, only: [:delete]
 end
