@@ -7,7 +7,7 @@
     <div class="book-container">
 
       <div class="content">
-        <a href="/pubs/<%= @pub.id %>/confirmation"><button class="btn">Add to Pub Crawl</button></a>
+        <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to Pub Crawl</button>
       </div>
     </div>
     <div class="informations-container">
@@ -36,18 +36,26 @@
     </div>
   </li>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Pub to Pub Crawl</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <%= simple_form_for [@pub, @stop] do |f| %>
+        <%= f.association :pub_crawl, collection: PubCrawl.all, prompt: "Select a Pub Crawl" %>
+        <%= f.submit "Add Pub" %>
+      <% end %>
 
-<div id="modal-container">
-  <div class="modal-background">
-    <div class="modal">
-      <h2>Modal</h2>
-      <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
-								<rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
-							</svg>
+      <%#= link_to "Back", pubs_path %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="modal-button">
-  <div id="six" class="button">Sketch</div>
 </div>

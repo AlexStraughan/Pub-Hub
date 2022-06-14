@@ -16,6 +16,7 @@ class PubsController < ApplicationController
 
   def show
     @pub = Pub.find(params[:id])
+    @stop = Stop.new
   end
 
   def confirmation
