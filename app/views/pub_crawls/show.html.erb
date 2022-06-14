@@ -1,5 +1,7 @@
 <div class="position-relative">
-  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+  <div class="card-category card-large" >
+  <video src="background-video.mp4" autoplay loop></video>
+
     <h1><%= @pub_crawl.name %></h1>
   </div>
     <span class="pub-tag"><%= pluralize(@pub_crawl.pubs.size, 'pub') %></span>
@@ -19,8 +21,9 @@
       <% stop = Stop.find_by(pub_crawl: @pub_crawl, pub: pub) %>
 
 
-        <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
-          <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+          <div class="card text-white card-has-bg click-col" style="background-image:url(<%= asset_path "tile_image_#{rand(5)}.jpg" %>);">
+            <img class="card-img d-none" src="https://source.unsplash.com/600x900/?pub" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
             <div class="card-img-overlay d-flex flex-column">
               <div class="card-body">
                 <small class="card-meta mb-2"><%= @pub_crawl.name %></small>
@@ -29,6 +32,7 @@
               <div class="card-footer">
                 <div class="media">
                   <div class="media-body">
+                  </div>
                 </div>
               </div>
             </div>
