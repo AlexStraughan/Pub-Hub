@@ -10,8 +10,12 @@ class StopsController < ApplicationController
   def create
     @stop = Stop.new(stop_params)
     @stop.pub = @pub
+    if @stop.save
+      redirect_to pub_path(@pub)
+    else
+      render pubs/show, :unprocessable_entity
+    end
     # flash[:notice] = @stop.errors.full_messages.to_sentence unless @stop.save
-    redirect_to pub_path(@pub)
   end
 
   private

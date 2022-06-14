@@ -17,22 +17,24 @@
   <div class="row my-2">
     <% @pub_crawl.pubs.each do |pub| %>
       <% stop = Stop.find_by(pub_crawl: @pub_crawl, pub: pub) %>
-      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
-        <div class="bg-white rounded shadow h-100">
-          <div class="p-3 rounded-bottom d-flex flex-column">
-            <strong><%= pub.name %> <span class="text-muted font-weight-normal">• <%= pub.rating %> <i class="fas fa-star star-yellow"></i></span></strong>
-            <small class="text-muted"><%= pub.name %></small>
-            <div class="d-flex align-items-end justify-content-between pt-4">
-              <div>
-                <i class="fas fa-quote-left me-2"></i><small class="flex-grow-1"><%= stop.comment %></small>
-              </div>
-              <small class="text-right flex-shrink-0"><%= link_to "delete", stop_path(stop), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{pub.name} from your #{@pub_crawl.name} pub_crawl"}, class: 'text-danger' %></small>
-            </div>
+
+
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4"><div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+         <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+        <div class="card-img-overlay d-flex flex-column">
+         <div class="card-body">
+            <small class="card-meta mb-2"><%= @pub_crawl.name %></small>
+            <h4 class="card-title mt-0 "><a class="text-white" herf="#"><%= pub.name%></a></h4>
+
           </div>
-        </div>
+          <div class="card-footer">
+           <div class="media">
+  <div class="media-body">
+      </div>
+
+      </div>
+
       </div>
     <% end %>
   </div>
 </div>
-
-<%= render "stops/modal", pub_crawl: @pub_crawl, stop: @stop %>

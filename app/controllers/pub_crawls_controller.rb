@@ -10,24 +10,24 @@ class PubCrawlsController < ApplicationController
     @stop = Stop.new
   end
 
-  def new
-    # @pub_crawl = PubCrawl.find(params[:id])
-    @pub_crawl = PubCrawl.new
-  end
+  # def new
+  #   # @pub_crawl = PubCrawl.find(params[:id])
+  #   @pub_crawl = PubCrawl.new
+  # end
 
-  def create
-    @pub_crawl = PubCrawl.new(pub_crawl_params)
-    if @pub_crawl.save
-      redirect_to pub_crawl_path(@pub_crawl)
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
+  # def create
+  #   @pub_crawl = PubCrawl.new(pub_crawl_params)
+  #   if @pub_crawl.save
+  #     redirect_to pub_crawl_path(@pub_crawl)
+  #   else
+  #     render :new, status: :unprocessable_entity
+  #   end
+  # end
 
-  def destroy
-    @pub_crawl.destroy
-    redirect_to pub_crawls_path, status: :see_other
-  end
+  # def destroy
+  #   @pub_crawl.destroy
+  #   redirect_to pub_crawls_path, status: :see_other
+  # end
 
   private
 
