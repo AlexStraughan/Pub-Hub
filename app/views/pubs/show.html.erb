@@ -31,13 +31,13 @@
             <p>Closes 12am</p>
           </div>
         </div>
-        <p class="disclaimer">This is a quaint pub within Shoreditch which is sure to offer I love cheese, especially hard cheese cream cheese. Cheese and biscuits cream cheese jarlsberg pecorino macaroni cheese pecorino.</p>
+        <p class="disclaimer">A bar stool plays pinochle with a discusting Long Trail Ale. A micro brew over the Hops Alligator Ale befriends some Yuengling about the keg. Any Ipswich Ale can sanitize a whacked Pilsner, but it takes a real customer to negotiate a prenuptial agreement with the Miller. If another Budweiser Select trades baseball cards with a Sam Adams around the Octoberfest, then an ESB prays. If the raspy Pilsner Urquell negotiates a prenuptial agreement with the salty Sam Adams, then a plowed Budweiser dies.</p>
         </div>
     </div>
   </li>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -47,15 +47,13 @@
       <div class="modal-body">
        <%= simple_form_for [@pub, @stop] do |f| %>
         <%= f.association :pub_crawl, collection: PubCrawl.all, prompt: "Select a Pub Crawl" %>
-        <%= f.submit "Add Pub" %>
-      <% end %>
+        <%= f.submit "Save Changes", class:"btn btn-primary"%>
+       <% end %>
 
-      <%#= link_to "Back", pubs_path %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
-    </div>
-  </div>
-</div>
+     </div>
+   </div>
+ </div>

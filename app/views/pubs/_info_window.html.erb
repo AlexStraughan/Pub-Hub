@@ -1,1 +1,6 @@
-<p class="pub-info-window-title"><%= link_to pub.name, pub_path(pub.id) %></p>
+
+<%# <div class="card">
+  <div class="card-body"> %>
+    <%= link_to pub.name, pub_path(pub.id), class: "btn btn-warning" %>
+  <%# </div>
+</div> %>
