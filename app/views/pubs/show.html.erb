@@ -1,7 +1,7 @@
 <body class="show">
-<div class="section">
+<div class="review-background-image">
   <%= video_tag "show_video.mp4", autoplay: true, muted: true, loop: true, class: "background-show" %>
-  <div class="section">
+  <div class="review-section">
   <% @pub.reviews.each do |review| %>
     <p class="mb-0"><%= review.comment %> <%= review.rating%></p>
   <% end %>
