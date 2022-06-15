@@ -1,17 +1,24 @@
 <body class="show">
 <div class="section">
   <%= video_tag "show_video.mp4", autoplay: true, muted: true, loop: true, class: "background-show" %>
+  <div class="section">
+  <% @pub.reviews.each do |review| %>
+    <p class="mb-0"><%= review.comment %> <%= review.rating%></p>
+  <% end %>
+  </div>
 </div>
+
+
 <ul>
   <li class="booking-card" style="background-image: url(https://d1e00ek4ebabms.cloudfront.net/production/8669b7f0-b3bb-4c07-ad74-88af722d110b.jpg)">
     <div class="book-container">
 
       <div class="content">
-        <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to Pub Crawl</button>
+        <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to Pub Crawl </button>
       </div>
     </div>
     <div class="informations-container">
-      <h2 class="title"><%= @pub.name %></h2>
+      <h2 class="title"><%= @pub.name %> </h2>
       <p class="sub-title">An excellent pub for your pub crawl!</p>
       <p class="price"><svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24">
     <path fill="currentColor" d="M3,6H21V18H3V6M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M7,8A2,2 0 0,1 5,10V14A2,2 0 0,1 7,16H17A2,2 0 0,1 19,14V10A2,2 0 0,1 17,8H7Z" />
@@ -36,6 +43,8 @@
     </div>
   </li>
 </body>
+
+
 
 <!-- Modal -->
  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

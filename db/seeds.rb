@@ -1,28 +1,30 @@
 require 'open-uri'
 require 'json'
+require 'faker'
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
 #
-#   pubs = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", pub: pubs.first)
+#   pubs = Movie.create!([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+#   Character.create!(name: "Luke", pub: pubs.first)
 PubCrawl.destroy_all
 
+Review.destroy_all
+
 Pub.destroy_all
-#
-# //url = "find the right endpoint"
-# x amount of pubs.do |i|
-# pubs = json.parse(open("#{url}")).read['results']
-PubCrawl.create(
-  name: "the best crawl",
-  time: "tuesday"
-)
-PubCrawl.create(
-  name: "the second best crawl",
-  time: "wednesday"
-)
+
+User.destroy_all
+
+10.times do
+  User.create(
+    email: Faker::Internet.email,
+    password: "123456",
+  )
+end
+
+
 
 
 
@@ -46,7 +48,7 @@ pubsArray = JSON.parse(URI.open(london_pubs).read)['elements']
 
   pubsArray.first(30).each do |pub|
 
-    Pub.create(
+    p = Pub.create!(
     name: pub['tags']['name'],
     address: pub['tags']['addr:postcode'],
     description: pub['tags']['description'],
@@ -56,17 +58,36 @@ pubsArray = JSON.parse(URI.open(london_pubs).read)['elements']
     wheelchair: pub['tags']['wheelchair'],
     smoking: pub['tags']['smoking'],
     )
+    Review.create!(
+    rating: rand(4),
+    comment: Faker::Restaurant.review,
+    pub_id: p.id,
+    user: User.all.sample
+    )
   end
 
-PubCrawl.create(
+PubCrawl.create!(
   name: "the best crawl",
   time: "tuesday",
 )
 
-PubCrawl.create(
+PubCrawl.create!(
   name: "the second best crawl",
   time: "wednesday",
 )
+
+PubCrawl.create!(
+  name: "not the best crawl",
+  time: "thursday",
+)
+
+
+
+  # Review.create! for each pub create! review
+  # create! rating rand(4)
+  # create! comment - Faker::Restaurant.review
+  #
+
 #   url = "http://tmdb.lewagon.com/movie/top_rated"
 # 10.times do |i|
 #   puts "Importing movies from page #{i + 1}"
@@ -74,7 +95,7 @@ PubCrawl.create(
 #   movies.each do |movie|
 #     puts "Creating #{movie['title']}"
 #     base_poster_url = "https://image.tmdb.org/t/p/original"
-#     Movie.create(
+#     Movie.create!(
 #       title: movie['title'],
 #       overview: movie['overview'],
 #       poster_url: "#{base_poster_url}#{movie['backdrop_path']}",
