@@ -1,9 +1,8 @@
 <div class="position-relative">
   <div class="card-category card-large" >
-  <video src="background-video.mp4" autoplay loop></video>
-
-    <h1><%= @pub_crawl.name %></h1>
+    <%= video_tag "background-video-two.mp4", autoplay: true, muted: true, loop: true, class: "background-video-two" %>
   </div>
+    <h1><%= @pub_crawl.name %></h1>
     <span class="pub-tag"><%= pluralize(@pub_crawl.pubs.size, 'pub') %></span>
 </div>
 <div class="container mb-5">

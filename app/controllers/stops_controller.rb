@@ -11,9 +11,9 @@ class StopsController < ApplicationController
     @stop = Stop.new(stop_params)
     @stop.pub = @pub
     if @stop.save
-      redirect_to pub_path(@pub)
+      redirect_to pub_crawl_path(@stop.pub_crawl)
     else
-      render pubs/show, :unprocessable_entity
+      render "pubs/show", status: :unprocessable_entity
     end
     # flash[:notice] = @stop.errors.full_messages.to_sentence unless @stop.save
   end

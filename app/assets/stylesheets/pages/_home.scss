@@ -60,7 +60,7 @@
 .upper-banner{
     h1{
       color: bisque;
-      font-size: 30px;
+      font-size: 38px;
       font-family: 'Courier New', Courier, monospace;
       text-align: center;
     }
@@ -87,5 +87,11 @@
   }
   input:focus {
     color: bisque;
+<<<<<<< HEAD
+=======
+    font-size: 32px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+>>>>>>> 268b85b8939435d6b8a95dfca4838ee7e1bb1545
   }
 }
