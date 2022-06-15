@@ -37,3 +37,10 @@
   height: calc(50vh - 50px);
   position: relative;
   }
+
+.background-video-two{
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  }

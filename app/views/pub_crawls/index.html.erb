@@ -13,7 +13,7 @@
     <% @pub_crawls.each do |pub_crawl| %>
       <div class="co-12 col-sm-6 col-md-4 mb-3">
         <%= link_to pub_crawl_path(pub_crawl), class:"text-decoration-none" do %>
-          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path("pub_image_#{pub_crawl.id}.jpg") %>)">
+          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path("pub_image_#{rand(6)}.jpg") %>)">
             <%= pub_crawl.name %>
           </div>
         <% end %>
