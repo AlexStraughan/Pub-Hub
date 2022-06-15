@@ -4,9 +4,9 @@ class PubsController < ApplicationController
 
   def index
     if params[:address].present?
-       @pubs = Pub.near(params[:address], 10)
+       @pubs = Pub.includes(:reviews).near(params[:address], 10)
     else
-      @pubs = Pub.all
+      @pubs = Pub.includes(:reviews).all
     end
 
     @markers = @pubs.geocoded.map do |pub|
