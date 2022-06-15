@@ -18,8 +18,8 @@ Pub.destroy_all
 User.destroy_all
 
 User.create(
-  email: "cal@email.com"
-  password: "123456"
+  email: "cal@email.com",
+  password: "123456",
 )
 
 10.times do
@@ -50,7 +50,7 @@ pubsArray = JSON.parse(URI.open(london_pubs).read)['elements']
     # end
 
 
-  pubsArray.first(1000).each do |pub|
+  pubsArray.first(100).each do |pub|
 
     p = Pub.create!(
     name: pub['tags']['name'],
