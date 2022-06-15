@@ -1,0 +1,4 @@
+meta_product_name: "Pub Hub"
+meta_title: "Pub Hub - The Pub Crawl Specialists"
+meta_description: "We aim to provide revellers with the ability to create customised Pub-Crawls"
+meta_image: "beer.png" # should exist in `app/assets/images/`
