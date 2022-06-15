@@ -7,4 +7,12 @@ h1 {
   font-size: 20px;
   color: #467060;
   font-weight: bold;
+  text-align: center;
+}
+
+.index-background {
+ background: url("assets/light.png");
+ background-size: cover;
+ height: 100%;
+ width: 100%;
 }
