@@ -4,7 +4,7 @@ class PubsController < ApplicationController
 
   def index
     if params[:address].present?
-       @pubs = Pub.near(params[:address], 5)
+       @pubs = Pub.near(params[:address], 10)
     else
       @pubs = Pub.all
     end

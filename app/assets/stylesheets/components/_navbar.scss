@@ -16,19 +16,23 @@
 display: block;
 font-family: sans-serif;
 font-weight: bold;
-font-size: 44.2px;
+font-size: 37px;
 position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 color: bisque;
-
 }
 
 .App-name span:nth-child(2) {
   background: bisque;
   color: #467060;
   border-radius: 1vw;
-  padding: 0 18px;
+  padding: 0 15px;
   display: inline-block;
+  }
+
+
+  .nav-link {
+    color: bisque !important;
   }
