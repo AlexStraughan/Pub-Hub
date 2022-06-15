@@ -17,6 +17,11 @@ Pub.destroy_all
 
 User.destroy_all
 
+User.create(
+  email: "cal@email.com"
+  password: "123456"
+)
+
 10.times do
   User.create(
     email: Faker::Internet.email,
@@ -36,7 +41,6 @@ london_pubs = 'https://overpass-api.de/api/interpreter?data=%2F*%0AThis%20has%20
 pubsArray = JSON.parse(URI.open(london_pubs).read)['elements']
   # 10.times do
     # p pubs.first
-
 
     # pubsArray.first(10).each do |pub|
 
