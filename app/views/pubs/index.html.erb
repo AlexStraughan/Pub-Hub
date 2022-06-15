@@ -6,7 +6,7 @@
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     <%# <div class="pub-list" style="width: 30rem;">
-      <% @pubs.limit(10).each do |pub| %>
+      <% @pubs.limit(10) do |pub| %>
         <%# <ul>
           <li class="list-group-item"><strong>Name: </strong><%= pub.name %></li>
           <%# <li class="list-group-item"><strong>Address: </strong><%= pub.address %></li>
