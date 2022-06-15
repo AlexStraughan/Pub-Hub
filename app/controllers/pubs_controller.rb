@@ -3,7 +3,11 @@ class PubsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @pubs = Pub.all
+    if params[:address].present?
+       @pubs = Pub.near(params[:address], 5)
+    else
+      @pubs = Pub.all
+    end
 
     @markers = @pubs.geocoded.map do |pub|
       {

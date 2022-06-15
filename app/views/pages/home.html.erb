@@ -6,9 +6,9 @@
     </div>
     <div class="container">
     <h2>Enter your location to find live information about pubs nearby:</h2>
-      <form action="/pubs" class="searchbar">
+      <form action="/pubs" class="searchbar" data-controller="address-autocomplete" data-address-autocomplete-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>">
 
-      <input type="text" placeholder="Where are you now?" name="q">
+      <input type="text" placeholder="Where are you now?" name="address" id="address" data-address-autocomplete-target="address" style="display:none;">
         <button type="submit"><img src="assets/search.png"></button>
       </form>
     </div>
