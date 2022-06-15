@@ -1,7 +1,19 @@
 
   .show {
-    background: url("assets/wood-background.png");
+    background: asset-url("light-wood.png");
     background-size: cover;
     width: 100%;
     height: 100%;
+  }
+
+  .pub-tag {
+    text-align: center;
+  }
+
+  .pub-crawl-title {
+    padding-top: 20px;
+  }
+
+  .pub-crawl-container {
+    background: asset-url("light-wood.png");
   }
