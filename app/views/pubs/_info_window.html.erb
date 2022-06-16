@@ -10,7 +10,7 @@
       <%# <% @r.rating.to_i.times do  %>
       <%# <i class="bi bi-star-fill"></i> %>
       <%# <% end %>
-      <p><b>Beers Avaliable:</b> <%= Faker::Beer.name %>, <%= Faker::Beer.name %>, <%= Faker::Beer.name %></p>
+      <p class="info-window-description"><b>Beers Avaliable:</b> <%= Faker::Beer.name %>, <%= Faker::Beer.name %>, <%= Faker::Beer.name %></p>
       <% average_rating = pub.reviews.map(&:rating).sum.fdiv(pub.reviews.length).to_i %>
       <% average_rating.times do %>
         <i class="fa fa-star" aria-hidden="true"></i>
