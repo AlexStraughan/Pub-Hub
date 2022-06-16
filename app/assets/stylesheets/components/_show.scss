@@ -8,12 +8,18 @@
 
   .pub-tag {
     text-align: center;
+    margin-bottom: 2em;
+    font-family: 'Courier New', Courier, monospace;
   }
 
   .pub-crawl-title {
-    padding-top: 20px;
+    padding-top: 50px;
   }
 
   .pub-crawl-container {
     background: asset-url("light-wood.png");
+  }
+
+  .btn-primary {
+    color: #DCBF9A;
   }
