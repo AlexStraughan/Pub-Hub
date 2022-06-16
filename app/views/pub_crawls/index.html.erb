@@ -1,14 +1,14 @@
 <div class="pub-crawl-container">
   <div class="cover mb-4 d-flex align-items-center justify-content-center">
     <div class="text-center text-white">
-      <h1>Create your pub crawl</h1>
+      <h1 class="pub-crawls-title">Create your pub crawl</h1>
       <h3 class="typed-js" data-controller="typed-js"></h3>
     </div>
   </div>
   <div class="container py-5">
     <div class="d-flex align-items-center justify-content-between mb-3">
       <h1 class="mb-0">My Pub Crawls</h3>
-      <%= link_to "Create a new Pub Crawl!", new_pub_crawl_path, class: "btn btn-info" %>
+      <%= link_to "Create a new Pub Crawl!", new_pub_crawl_path, class: "ph-green" %>
     </div>
     <div class="row">
       <% @pub_crawls.each do |pub_crawl| %>
