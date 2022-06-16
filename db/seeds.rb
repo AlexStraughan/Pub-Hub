@@ -50,7 +50,7 @@ pubsArray = JSON.parse(URI.open(london_pubs).read)['elements']
     # end
 
 
-  pubsArray.first(100).each do |pub|
+  pubsArray.first(1700).each do |pub|
 
     p = Pub.create!(
     name: pub['tags']['name'],
@@ -62,12 +62,14 @@ pubsArray = JSON.parse(URI.open(london_pubs).read)['elements']
     wheelchair: pub['tags']['wheelchair'],
     smoking: pub['tags']['smoking'],
     )
+    4.times do
     Review.create!(
-    rating: rand(4),
+    rating: rand(1..5),
     comment: Faker::Restaurant.review,
     pub_id: p.id,
     user: User.all.sample
     )
+    end
   end
 
 PubCrawl.create!(

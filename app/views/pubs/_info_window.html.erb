@@ -9,6 +9,13 @@
       <%# <% @r.rating.to_i.times do  %>
       <%# <i class="bi bi-star-fill"></i> %>
       <%# <% end %>
-    <p> Most people believe that a pissed Sam Adams barely seeks a paternal miller, but they need to remember how ridiculously the lover inside the Octoberfest reads a magazine. Most people believe that the obsequious Yuengling shares a shower with a pit viper, but they need to remember how hesitantly a chain saw ruminates. The Busch related to the bar stool bestows great honor upon a broken bottle living with a bottle of beer. A sake bomb ceases to exist, and the Strohs feels nagging remorse; however, an Avery IPA over a Red Stripe drunkenly goes deep sea fishing with a beer. A thoroughly hairy bullfrog brew shares a shower with a corona light, but the knowingly frustrating Fraoch Heather Ale drunkenly competes with the bar tab.</p>
+
+      <% average_rating = pub.reviews.map(&:rating).sum.fdiv(pub.reviews.length).to_i %>
+      <% average_rating.times do %>
+        <i class="fa fa-star" aria-hidden="true"></i>
+      <% end %>
+
+
+    <%# <p> Most people believe that a pissed Sam Adams barely seeks a paternal miller, but they need to remember how ridiculously the lover inside the Octoberfest reads a magazine. Most people believe that the obsequious Yuengling shares a shower with a pit viper, but they need to remember how hesitantly a chain saw ruminates. The Busch related to the bar stool bestows great honor upon a broken bottle living with a bottle of beer. A sake bomb ceases to exist, and the Strohs feels nagging remorse; however, an Avery IPA over a Red Stripe drunkenly goes deep sea fishing with a beer. A thoroughly hairy bullfrog brew shares a shower with a corona light, but the knowingly frustrating Fraoch Heather Ale drunkenly competes with the bar tab.</p> %>
   </div>
 </div>
