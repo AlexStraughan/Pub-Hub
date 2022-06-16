@@ -45,6 +45,25 @@ PubCrawl.create!(
   time: "thursday",
 )
 
+PubCrawl.create!(
+  name: "It's just one pub",
+  time: "sunday",
+)
+
+PubCrawl.create!(
+  name: "The Wetherspoons special",
+  time: "always",
+)
+
+PubCrawl.create!(
+  name: "Fuller's finest",
+  time: "never",
+)
+
+PubCrawl.create!(
+  name: "AAAAAAAAAAAAAA",
+  time: "TODAY",
+)
 
 
 
