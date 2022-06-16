@@ -31,17 +31,17 @@ end
 
 
 PubCrawl.create!(
-  name: "the best crawl",
+  name: "The Best Pub Crawl",
   time: "tuesday",
 )
 
 PubCrawl.create!(
-  name: "the second best crawl",
+  name: "The Second Best Pub Crawl",
   time: "wednesday",
 )
 
 PubCrawl.create!(
-  name: "not the best crawl",
+  name: "Not the Best Crawl",
   time: "thursday",
 )
 
@@ -61,7 +61,7 @@ PubCrawl.create!(
 )
 
 PubCrawl.create!(
-  name: "AAAAAAAAAAAAAA",
+  name: "Ben's special surprise",
   time: "TODAY",
 )
 
@@ -83,7 +83,7 @@ pubsArray = JSON.parse(URI.open(london_pubs).read)['elements']
     # end
 
 
-  pubsArray.first(2000).each do |pub|
+  pubsArray.first(2500).each do |pub|
 
     p = Pub.create!(
     name: pub['tags']['name'],
@@ -95,18 +95,36 @@ pubsArray = JSON.parse(URI.open(london_pubs).read)['elements']
     wheelchair: pub['tags']['wheelchair'],
     smoking: pub['tags']['smoking'],
     )
-    4.times do
-    Review.create!(
-    rating: rand(1..5),
-    comment: Faker::Restaurant.review,
-    pub_id: p.id,
-    user: User.all.sample
-    )
-    end
+    Review.create!(rating: rand(1..5), comment: "I LOVE coming into here before work! - Ben McLaren", pub_id: p.id,
+    user: User.all.sample)
+
+    Review.create!(rating: rand(1..5), comment: "The BEST pub in Shoreditch, however they don't serve Guinness which is absolutley shocking, I mean seriously how can you not serve Guinness",pub_id: p.id,
+    user: User.all.sample)
+
+    Review.create!(rating: rand(1..5), comment: "Awesome toilets, the flush action is truly breathtaking, I could stand there and flush all day", pub_id: p.id,
+    user: User.all.sample)
+
+    Review.create!(rating: rand(1..5), comment: "Too many smelly coders",pub_id: p.id,
+    user: User.all.sample)
+
+    Review.create!(rating: rand(1..5), comment: "Prices are reasonable, smoking area is nice, hellza sick vibes. Had the most crazy Thursday nights, stuff goes cray-zee",pub_id: p.id,
+    user: User.all.sample)
+
+
   end
 
 
 
+
+
+  # 2.times do
+  #   Review.create!(
+  #   rating: rand(1..5),
+  #   comment: Faker::Restaurant.review,
+  #   pub_id: p.id,
+  #   user: User.all.sample
+  #   )
+  # end
 
   # Review.create! for each pub create! review
   # create! rating rand(4)
