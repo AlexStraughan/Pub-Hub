@@ -6,7 +6,7 @@
 <div class="pub-crawl-container">
   <h1 class="pub-crawl-title"><%= @pub_crawl.name.capitalize %></h1>
   <div class="d-flex justify-content-between my-4">
-    <div class="pub-tag" style="width:100%"><p><%= pluralize(@pub_crawl.pubs.size, 'pub') %></p></div>
+    <div style="width:100%"><em><p class="pub-tag"><%= pluralize(@pub_crawl.pubs.size, 'Pub') %></p></em></div>
     <div class="mb-2 d-block"><small><em class="text-muted"><%= "You haven't saved any pubs yet!" if @pub_crawl.pubs.empty? %></em></small></div>
   </div>
   <div class="row my-2" style="margin: 8px">
