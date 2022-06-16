@@ -30,6 +30,20 @@ User.create(
 end
 
 
+PubCrawl.create!(
+  name: "the best crawl",
+  time: "tuesday",
+)
+
+PubCrawl.create!(
+  name: "the second best crawl",
+  time: "wednesday",
+)
+
+PubCrawl.create!(
+  name: "not the best crawl",
+  time: "thursday",
+)
 
 
 
@@ -50,7 +64,7 @@ pubsArray = JSON.parse(URI.open(london_pubs).read)['elements']
     # end
 
 
-  pubsArray.first(3000).each do |pub|
+  pubsArray.first(2000).each do |pub|
 
     p = Pub.create!(
     name: pub['tags']['name'],
@@ -72,20 +86,6 @@ pubsArray = JSON.parse(URI.open(london_pubs).read)['elements']
     end
   end
 
-PubCrawl.create!(
-  name: "the best crawl",
-  time: "tuesday",
-)
-
-PubCrawl.create!(
-  name: "the second best crawl",
-  time: "wednesday",
-)
-
-PubCrawl.create!(
-  name: "not the best crawl",
-  time: "thursday",
-)
 
 
 
