@@ -12,7 +12,7 @@
 
       <% average_rating = pub.reviews.map(&:rating).sum.fdiv(pub.reviews.length).to_i %>
       <% average_rating.times do %>
-        <i class="bi bi-star-fill"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
       <% end %>
 
 

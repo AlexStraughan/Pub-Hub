@@ -5,7 +5,7 @@
     <h1> Reviews of <%=@pub.name %>: </h1>
     <% @pub.reviews.each do |review| %>
       <div>
-        <%= review.rating do %>
+        <% review.rating.times do %>
           <i class="fa fa-star" aria-hidden="true"></i>
         <% end %>
         <p class="mb-0"><%= review.comment %></p>
