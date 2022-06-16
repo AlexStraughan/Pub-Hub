@@ -1,10 +1,17 @@
 <body class="show">
-<div class="section">
+<div class="review-background-image">
   <%= video_tag "show_video.mp4", autoplay: true, muted: true, loop: true, class: "background-show" %>
-  <div class="section">
-  <% @pub.reviews.each do |review| %>
-    <p class="mb-0"><%= review.comment %> <%= review.rating%></p>
-  <% end %>
+  <div class="reviewsection">
+    <h1> Reviews of <%=@pub.name %>: </h1>
+    <% @pub.reviews.each do |review| %>
+      <div>
+        <% review.rating.times do %>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        <% end %>
+        <p class="mb-0"><%= review.comment %></p>
+      </div>
+      <hr>
+    <% end %>
   </div>
 </div>
 
@@ -57,7 +64,7 @@
       <div class="modal-body">
        <%= simple_form_for [@pub, @stop] do |f| %>
         <%= f.association :pub_crawl, collection: PubCrawl.all, prompt: "Select a Pub Crawl" %>
-        <%= f.submit "Save Changes", class:"btn btn-primary"%>
+        <%= f.submit "Save Changes", class:"phbtn"%>
        <% end %>
 
       </div>

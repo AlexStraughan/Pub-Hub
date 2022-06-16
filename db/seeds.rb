@@ -18,8 +18,8 @@ Pub.destroy_all
 User.destroy_all
 
 User.create(
-  email: "cal@email.com"
-  password: "123456"
+  email: "cal@email.com",
+  password: "123456",
 )
 
 10.times do
@@ -30,7 +30,40 @@ User.create(
 end
 
 
+PubCrawl.create!(
+  name: "the best crawl",
+  time: "tuesday",
+)
 
+PubCrawl.create!(
+  name: "the second best crawl",
+  time: "wednesday",
+)
+
+PubCrawl.create!(
+  name: "not the best crawl",
+  time: "thursday",
+)
+
+PubCrawl.create!(
+  name: "It's just one pub",
+  time: "sunday",
+)
+
+PubCrawl.create!(
+  name: "The Wetherspoons special",
+  time: "always",
+)
+
+PubCrawl.create!(
+  name: "Fuller's finest",
+  time: "never",
+)
+
+PubCrawl.create!(
+  name: "AAAAAAAAAAAAAA",
+  time: "TODAY",
+)
 
 
 
@@ -50,7 +83,7 @@ pubsArray = JSON.parse(URI.open(london_pubs).read)['elements']
     # end
 
 
-  pubsArray.first(1000).each do |pub|
+  pubsArray.first(2000).each do |pub|
 
     p = Pub.create!(
     name: pub['tags']['name'],
@@ -62,28 +95,16 @@ pubsArray = JSON.parse(URI.open(london_pubs).read)['elements']
     wheelchair: pub['tags']['wheelchair'],
     smoking: pub['tags']['smoking'],
     )
+    4.times do
     Review.create!(
-    rating: rand(4),
+    rating: rand(1..5),
     comment: Faker::Restaurant.review,
     pub_id: p.id,
     user: User.all.sample
     )
+    end
   end
 
-PubCrawl.create!(
-  name: "the best crawl",
-  time: "tuesday",
-)
-
-PubCrawl.create!(
-  name: "the second best crawl",
-  time: "wednesday",
-)
-
-PubCrawl.create!(
-  name: "not the best crawl",
-  time: "thursday",
-)
 
 
 

@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-
-  get '/404', to: 'errors#not_found'
-  get '/500', to: 'errors#internal_server'
-  get '/422', to: 'errors#unprocessable'
-
+  get 'errors/not_found'
+  get 'errors/internal_server_error'
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -22,6 +19,8 @@ Rails.application.routes.draw do
   resources :users
   resources :reviews
 
+  match "/404", to: "errors#not_found", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
 
   # resources :stops, only: [:delete]
 end
